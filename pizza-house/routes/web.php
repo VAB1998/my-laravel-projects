@@ -18,5 +18,6 @@ Route::get('/', function () {
 });
 
 Route::get('/pizzas', function () {
-    return view('pizzas');
+    $pizzas = config('pizzas');
+    return view('pizzas', [ 'pizzas' => $pizzas]);
 });

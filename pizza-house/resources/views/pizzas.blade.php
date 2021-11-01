@@ -65,25 +65,17 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Pizzas
+                    Pizzas List
                 </div>
-
+                <!-- Variable output "taken from the Database" -->
+                <!-- Double curly braces allow us to output a dynamic value or a variable  that we pass throught the view -->
+                <!-- Dynamically Injection of Datas -->
+                @foreach ($pizzas as $pizza)
+                    <p> {{ $pizza['type'] }} {{ $pizza['base'] }} {{ $pizza['price'] }}  </p>
+                @endforeach 
             </div>
         </div>
     </body>
