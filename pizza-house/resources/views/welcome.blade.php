@@ -1,5 +1,7 @@
 @extends('layouts.layout')
 
+@section('title', 'Welcome')
+
 @section('content')
 
 <div class="flex-center position-ref full-height">
